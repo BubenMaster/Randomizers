@@ -1,12 +1,11 @@
 package com.yojik.range_splitter;
 
-import com.yojik.password_generator.PasswordGenerator;
-
-import java.io.ByteArrayOutputStream;
 import java.util.Arrays;
 
 
 public class SimulatorForRangeRandomSplitter {
+
+    private static final RangeRandomSplitter randomSplitter = RangeRandomSplitterFirstImpl.getInstance();
 
 
     public static void main(String[] args) {
@@ -17,7 +16,7 @@ public class SimulatorForRangeRandomSplitter {
     private static void show15SplitsWithMinimum1For(int range, int pieces){
         System.out.println("\n");
         for (int i = 0; i < 15; i++) {
-            int[] simulatedResult = RangeRandomSplitter.getInstance().splitWithMinimalPiece(range, pieces, 1);
+            int[] simulatedResult = randomSplitter.splitWithMinimalPiece(range, pieces, 1);
             System.out.printf("Range: %d, pieces: %d, Split result: %s%n", range, pieces, Arrays.toString(simulatedResult));
         }
     }
@@ -34,7 +33,7 @@ public class SimulatorForRangeRandomSplitter {
     private static void showRelativeElementsDistributionAverageFrom100SimulationsFor(int range, int pieces){
         int[] summaryOfSimulations = new int[pieces];
         for (int i = 0; i < 100; i++) {
-            int[] singleSimulation = RangeRandomSplitter.getInstance().splitWithMinimalPiece(range, pieces, 1);
+            int[] singleSimulation = randomSplitter.splitWithMinimalPiece(range, pieces, 1);
             appendArraySourceTo(summaryOfSimulations, singleSimulation);
 
         }

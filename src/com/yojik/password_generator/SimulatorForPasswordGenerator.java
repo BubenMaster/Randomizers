@@ -1,9 +1,6 @@
 package com.yojik.password_generator;
 
-import com.yojik.range_splitter.RangeRandomSplitter;
-
 import java.io.ByteArrayOutputStream;
-import java.util.Arrays;
 
 
 public class SimulatorForPasswordGenerator {

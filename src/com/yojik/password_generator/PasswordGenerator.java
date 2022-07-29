@@ -1,6 +1,6 @@
 package com.yojik.password_generator;
 
-import com.yojik.range_splitter.RangeRandomSplitter;
+import com.yojik.range_splitter.RangeRandomSplitterFirstImpl;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -60,7 +60,7 @@ public class PasswordGenerator{
     //Create array with random ranges of symbol types
     private static SymbolicTypes[] createSymbolTypeMask(int lengthOfMask) {
         SymbolicTypes[] result = new SymbolicTypes[lengthOfMask];
-        int[] Amounts = RangeRandomSplitter.getInstance().split(lengthOfMask,3);
+        int[] Amounts = RangeRandomSplitterFirstImpl.getInstance().split(lengthOfMask,3);
         int lowCaseRandomisedAmount = Amounts[0],
             highCaseRandomisedAmount = Amounts[1],
             numericRandomAmount = Amounts[2];
