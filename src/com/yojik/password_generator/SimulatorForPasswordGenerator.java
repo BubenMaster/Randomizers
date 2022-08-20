@@ -5,7 +5,7 @@ import java.io.ByteArrayOutputStream;
 
 public class SimulatorForPasswordGenerator {
 
-    static int lengthOfPassword = 8;
+    static int lengthOfPassword = 16;
 
     public static void main(String[] args) {
         ByteArrayOutputStream password = PasswordGenerator.generatePassword(lengthOfPassword);
